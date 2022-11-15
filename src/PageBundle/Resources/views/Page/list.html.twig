@@ -1,0 +1,16 @@
+{%  extends "@App/layout.html.twig" %}
+
+{% block layoutBlockLeft %}
+    <div class="block block--page-list">
+        <div class="block-content">
+            <div class="list list--page-list">
+                {% for page in pages %}
+                    <div class="list-item">
+                        {{  include('@Page/ViewMode/teaser.htm.twig', { 'item' : page }) }}
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

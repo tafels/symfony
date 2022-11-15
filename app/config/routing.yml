@@ -1,7 +1,10 @@
-page:
-    resource: "@PageBundle/Controller/"
+comment:
+    resource: "@CommentBundle/Controller/"
     type:     annotation
     prefix:   /
+
+page:
+    resource: "@PageBundle/Resources/config/routing.yml"
 
 category:
     resource: "@CategoryBundle/Controller/"

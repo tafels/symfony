@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{%  block body %}
+    <div class="layout">
+        <div class="layout-block--wrap">
+            <div class="loyout-block loyout-block-left">
+                {% block layoutBlockLeft %}{% endblock %}
+            </div>
+            <div class="loyout-block loyout-block-right">
+                {% block layoutBlockRight %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

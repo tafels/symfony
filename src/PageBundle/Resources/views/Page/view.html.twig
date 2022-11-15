@@ -1,0 +1,12 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block layoutBlockLeft %}
+    <div class="block block--page-view">
+        <div class="block-content">
+            <h2 class="field field-title">{{ page.title }}</h2>
+            <div class="field field-body">{{ page.body }}</div>
+            <div class="field field-category">{{ page.category.name }}</div>
+            <div class="field field-createddate">{{ page.createddate|date('d-n-Y') }}</div>
+        </div>
+    </div>
+{% endblock %}
