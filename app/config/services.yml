@@ -33,3 +33,7 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+    CategoryBundle\DataFixtures\:
+        resource: '../../src/CategoryBundle/DataFixtures'
+    PageBundle\DataFixtures\:
+        resource: '../../src/PageBundle/DataFixtures'
