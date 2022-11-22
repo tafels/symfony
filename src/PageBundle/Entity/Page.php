@@ -49,6 +49,11 @@ class Page
     private $category;
 
     /**
+     * @ORM\ManyToMany(targetEntity="CommentBundle\Entity\Comment", mappedBy="pages")
+     */
+    private $comments;
+
+    /**
      * Get id
      *
      * @return int
@@ -152,5 +157,47 @@ class Page
     public function getCategory()
     {
         return $this->category;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \CommentBundle\Entity\Comment $comment
+     *
+     * @return Page
+     */
+    public function addComment(\CommentBundle\Entity\Comment $comment)
+    {
+        $this->comments[] = $comment;
+        $comment->addPage($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \CommentBundle\Entity\Comment $comment
+     */
+    public function removeComment(\CommentBundle\Entity\Comment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }
